@@ -1,0 +1,287 @@
+/* ==========================================================================
+   AMAZON CLONE GLOBAL DESIGN SYSTEM & STYLES
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --amz-dark-navy: #131921;
+  --amz-sub-navy: #232f3e;
+  --amz-bg-gray: #eaeded;
+  --amz-accent-orange: #f08804;
+  --amz-yellow-btn: #ffd814;
+  --amz-yellow-btn-hover: #f7ca00;
+  --amz-orange-btn: #ffa41c;
+  --amz-orange-btn-hover: #fa8900;
+  --amz-blue-link: #007185;
+  --amz-blue-link-hover: #c7511f;
+  --amz-deal-red: #cc0c39;
+  --amz-green-success: #067d62;
+  --amz-border-gray: #d5d9d9;
+  --amz-text-dark: #0f1111;
+  --amz-text-muted: #565959;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Shadows & Radius */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 30px -10px rgba(0, 0, 0, 0.25);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--amz-bg-gray);
+  color: var(--amz-text-dark);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--amz-blue-link);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--amz-blue-link-hover);
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Base Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px 40px 16px;
+}
+
+/* Amazon Buttons */
+.btn-primary {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  background-color: var(--amz-yellow-btn);
+  color: var(--amz-text-dark);
+  border: 1px solid #a88734 #9c7e31 #846a29;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #f5d78e, #eeb933);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+  background: linear-gradient(to bottom, #f7ca00, #f08804);
+  background-color: var(--amz-orange-btn);
+  color: #fff;
+  border: 1px solid #c45500;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to bottom, #fa8900, #e47911);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.btn-outline {
+  background-color: #fff;
+  border: 1px solid var(--amz-border-gray);
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: var(--amz-text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  background-color: #f7f9f9;
+  border-color: #a8a8a8;
+}
+
+/* Badges */
+.badge-deal {
+  background-color: var(--amz-deal-red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.badge-prime {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: #00a8e1;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+}
+
+.badge-prime span {
+  color: var(--amz-accent-orange);
+  font-style: normal;
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #ffa41c;
+}
+
+.star-rating .review-count {
+  margin-left: 6px;
+  color: var(--amz-blue-link);
+  font-size: 13px;
+}
+
+/* Glassmorphism Modals & Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Notification Toast */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast-item {
+  background-color: #fff;
+  color: var(--amz-text-dark);
+  border-left: 5px solid var(--amz-green-success);
+  box-shadow: var(--shadow-lg);
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  animation: toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes toastIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Utility Animations */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
